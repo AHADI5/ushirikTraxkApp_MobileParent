@@ -22,7 +22,6 @@ class LoginPageState extends State<ParentLoginPage> {
       key: _formKey,
       child: Column(
         children: [
-         
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
             child: TextFormField(
@@ -62,20 +61,28 @@ class LoginPageState extends State<ParentLoginPage> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-            child: MaterialButton(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+              child: MaterialButton(
                 minWidth: double.infinity,
-                padding: const EdgeInsets.all(20),
-                color: const Color.fromRGBO(116, 62, 228, 1),
+                padding: const EdgeInsets.all(13),
+                color: const Color.fromRGBO(66, 160, 237, 1),
                 textColor: Colors.white,
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('connexion')));
+                      const SnackBar(content: Text('Connexion')),
+                    );
                   }
                 },
-                child: const Text("Login")),
-          )
+                shape: RoundedRectangleBorder(
+                  borderRadius:
+                      BorderRadius.circular(10.0), // Adjust as desired
+                ),
+                child: const Text(
+                  "connexion",
+                  style: TextStyle(fontSize: 23),
+                ),
+              ))
         ],
       ),
     );
